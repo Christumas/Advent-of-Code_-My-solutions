@@ -38,6 +38,8 @@ def updated_calval(list):
             last_digit += matches[-1]
         digits = first_digit + last_digit
         cal_vals.append(int(digits))
+        print(matches, i, digits)
+
     total = sum(cal_vals)
     return total
 
