@@ -13,7 +13,7 @@ num_letters = {'one': '1',
                'ten': '10'
                }
 
-num_words = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine',
+possibilities = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine',
              '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 with open('input.txt', 'r') as file:
@@ -21,7 +21,7 @@ with open('input.txt', 'r') as file:
 
 
 def updated_calval(list):
-    regex = re.compile('|'.join(num_words))
+    regex = re.compile('|'.join(possibilities))
     cal_vals = []
 
     for i in list:
@@ -38,8 +38,7 @@ def updated_calval(list):
             last_digit += matches[-1]
         digits = first_digit + last_digit
         cal_vals.append(int(digits))
-        print(matches)
-    print(cal_vals)
-    print(sum(cal_vals))
+    total = sum(cal_vals)
+    return total
 
-updated_calval(lines)
+print(updated_calval(lines))
